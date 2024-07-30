@@ -1,0 +1,23 @@
+MERN boking app commands 
+
+
+app/backend 
+	npm init 
+	npm i express cors dotenv mongodb mongoose 
+	npm i @types/cors @types/express @types/node ts-node typescript nodemon --save-dev
+
+	 "scripts": {
+    		"dev": "nodemon"
+  	 },
+
+
+C:\Users\HP\Desktop\BOOKING-APP>
+	 npm create vite@latest
+	 React 
+	 TS + WBC
+	  cd frontend
+  	npm install
+  	npm run dev
+
+
+mongoDB pass - v878gjobhScaYlbk
