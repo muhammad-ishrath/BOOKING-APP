@@ -28,3 +28,5 @@ backend - to validate user registration data - npm i express-validator
 
 
 PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm i react-hook-form
+
+PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm i react-query
