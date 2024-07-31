@@ -2,6 +2,8 @@ import express, {Request, Response} from 'express';
 import { check, validationResult } from 'express-validator';
 import User from '../models/user';
 import bcrypt from 'bcryptjs';
+import jwt from "jsonwebtoken";
+// import { JsonWebTokenError } from 'jsonwebtoken';
 
 const router = express.Router();
 
@@ -30,6 +32,18 @@ router.post("/login",[
         if (!isMatch) {
             return res.status(400).json({message:"Invalid Credentials"});
         }
+
+        const token =  jwt.sign({userID:user.id}, process.env.JWT_SECRET_KEY as string, {
+            expiresIn: "1d",
+        });
+
+        res.cookie("auth_token", token, {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === "production",
+            maxAge: 86400000,
+        });
+
+        res.status(200).json({userID: user._id});
 
     } catch (error) {
         console.log(error);
