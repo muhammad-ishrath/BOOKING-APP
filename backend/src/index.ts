@@ -18,6 +18,7 @@ import mongoose from 'mongoose';
 
 //can use custom names when importing default modules 
 import  userRoutes from "./routes/users";
+import authRoutes from "./routes/auth";
 
 // the value could be undefined as well but not necessary 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
@@ -44,7 +45,7 @@ app.use(cors());
 //     res.json({message: "hello from express endpoint!"});
 // });
 
-
+app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 
 //127.0.0.1

@@ -1,6 +1,7 @@
 import './index.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './layout/Layout';
+import Register from './pages/Register';
 
 const App = () => {
   return (
@@ -9,19 +10,23 @@ const App = () => {
 
           <Route path="/" element={
             <Layout>
-            <p>Home Page</p>
-          </Layout>
-        } 
-        />
+              <p>Home Page</p>
+            </Layout>
+            } 
+          />
 
         {/* dynamic parts with fixed contents of a page  - same component*/}
 
         <Route path="/search" element={
-            <Layout>
+          <Layout>
             <p>Search Page</p>
           </Layout>
         } 
         />
+
+        <Route path="/register" element={<Register/>} />
+
+
       </Routes>
     </Router>
   );
