@@ -47,7 +47,6 @@ app.use(cors());
 
 app.use("/api/users", userRoutes);
 
-
 //127.0.0.1
 //app.listen(port as an argument, [hostname - optional -if not specified localhost], [callback function - for logging or initialization]);
 // if empty it listen from any host

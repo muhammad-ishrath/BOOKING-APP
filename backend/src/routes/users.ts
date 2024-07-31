@@ -6,14 +6,27 @@ import User from '../models/user';
 
 
 import jwt from 'jsonwebtoken';
+import { check, validationResult} from 'express-validator';
+
+
 
 //certes a new router instance
 // explore the capabilities and usage of the router instance created by Router() function in the express module(main module in express library)
 const  router = express.Router();
 
-// /api/users/register
-router.post("/register",async (req:Request, res:Response) =>{
+// /api/users/register  - API for User Registration
+router.post("/register", [
+    check("firstName", "First Name is required").isString(),
+    check("lastName", "Larst Name is required").isString(),
+    check("email", "Email is required").isEmail(),
+    check("password", "Password with 6 or more characters required").isLength({min:6}),
+],async (req:Request, res:Response) =>{
+    const errors = validationResult(req);
+    if(!errors.isEmpty()){
+        return  res.status(400).json({message: errors.array()});
+    }
     try{
+
         let user = await User.findOne({
             email: req.body.email,
         });

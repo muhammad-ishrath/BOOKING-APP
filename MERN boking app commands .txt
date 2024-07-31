@@ -21,3 +21,7 @@ C:\Users\HP\Desktop\BOOKING-APP>
 
 
 mongoDB pass - v878gjobhScaYlbk
+
+
+
+backend - to validate user registration data - npm i express-validator 
