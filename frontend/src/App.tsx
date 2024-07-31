@@ -24,7 +24,11 @@ const App = () => {
         } 
         />
 
-        <Route path="/register" element={<Register/>} />
+        <Route path="/register" element={
+          <Layout>
+            <Register/>
+          </Layout>
+        } />
 
 
       </Routes>

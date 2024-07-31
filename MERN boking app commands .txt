@@ -25,3 +25,6 @@ mongoDB pass - v878gjobhScaYlbk
 
 
 backend - to validate user registration data - npm i express-validator 
+
+
+PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm i react-hook-form
