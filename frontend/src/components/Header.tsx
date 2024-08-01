@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { useAppContext } from "../contexts/AppContext";
 
 
 const Header = () => {
+    const {isLoggedIn} = useAppContext();
     return(
         //look tailwind documentation for more detaisl
         <div className="bg-blue-800 py-4 px-4">
@@ -17,8 +19,13 @@ const Header = () => {
                     <Link to="/"> MernHolidays.com </Link>
                 </span>
                 <span className="flex space-x-2">
-                    <Link to="/sign-in" className="flex  bg-white items-center text-blue-600 px-3 py-2 font-bold hover:bg-gray-100">Sign in</Link>
-                </span>
+                    {isLoggedIn? <>
+                    <Link to="/my-bookings">My Bookings</Link>
+                    <Link to="/my-hotels">My Hotels</Link>
+                    <button>Sign out</button>
+                    </>:<Link to="/sign-in" className="flex  bg-white items-center text-blue-600 px-3 py-2 font-bold hover:bg-gray-100">Sign in</Link>
+                 }
+                    </span>
             </div>
         </div>
       

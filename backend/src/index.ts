@@ -20,12 +20,15 @@ import mongoose from 'mongoose';
 import  userRoutes from "./routes/users";
 import authRoutes from "./routes/auth";
 
+import cookieParser from "cookie-parser";
+
 // the value could be undefined as well but not necessary 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 // creates an instance of express app
 // to define endpoints / middleware / start the server
 const app = express();
+app.use(cookieParser());
 
 // calling middleware function to convert json data from clients in http req body to JS objects
 app.use(express.json());
@@ -34,7 +37,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 // a security feature - in default allow resource sharing from any origin(domain- adress for internet resources/websites) frontend at 5000 and backend at 3000
-app.use(cors());
+app.use(cors({
+    origin:process.env.FRONTEND_URL,
+    credentials:true,
+}));
 
 //app.get(path, handler function)
 // async function allow to use await

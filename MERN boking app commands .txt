@@ -31,3 +31,5 @@ PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm install  -D tailwind postcss au
 backend -
 	npm install bcryptjs jsonwebtoken
 	npm i @types/bcryptjs @types/jsonwebtoken
+
+PS C:\Users\HP\Desktop\BOOKING-APP\backend> npm i cookie-parser
