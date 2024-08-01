@@ -2,6 +2,7 @@ import './index.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Layout from './layout/Layout';
 import Register from './pages/Register';
+import SignIn from './pages/SignIn';
 
 const App = () => {
   return (
@@ -28,8 +29,17 @@ const App = () => {
           <Layout>
             <Register/>
           </Layout>
-        } />
+        } 
+        />
 
+        <Route 
+          path="/sign-in"
+          element = {
+            <Layout>
+              <SignIn />
+            </Layout>
+          }
+         />
 
       </Routes>
     </Router>
