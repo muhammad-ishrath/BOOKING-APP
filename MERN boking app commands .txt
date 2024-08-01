@@ -20,13 +20,14 @@ C:\Users\HP\Desktop\BOOKING-APP>
   	npm run dev
 
 
-mongoDB pass - v878gjobhScaYlbk
+mongoDB pass - v878gjobhScaYlbk	-Muhammadishrath
+
+constring -mongodb+srv://Muhammadishrath:<password>@development.rkfpomw.mongodb.net/?retryWrites=true&w=majority&appName=Development
 
 
+PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm install  -D tailwind postcss autoprefixer
 
-backend - to validate user registration data - npm i express-validator 
 
-
-PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm i react-hook-form
-
-PS C:\Users\HP\Desktop\BOOKING-APP\frontend> npm i react-query
+backend -
+	npm install bcryptjs jsonwebtoken
+	npm i @types/bcryptjs @types/jsonwebtoken
