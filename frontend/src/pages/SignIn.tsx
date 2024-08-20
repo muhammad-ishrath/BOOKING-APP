@@ -1,9 +1,10 @@
 // a react hook to manage and validate form 
 import {useForm} from "react-hook-form";
-import { useMutation } from "react-query";
+import { useMutation, useQueryClient } from "react-query";
 import * as apiClient from "../api-client";
 import { useAppContext } from "../contexts/AppContext";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // type declaration for form  data 
 export type SignInFormData = {
@@ -15,17 +16,17 @@ export type SignInFormData = {
 const SignIn = () => {
     const {showToast} = useAppContext();
     const  navigate = useNavigate();
-    const {register,
-         formState:{errors},
-         handleSubmit
+    const queryClient = useQueryClient();
+    const {
+        register,
+        formState:{errors},
+        handleSubmit
             } = useForm<SignInFormData>();
 
     const mutation = useMutation(apiClient.signIn,{
         onSuccess: async ()=>{
-            // console.log("user has been signed in");
-            // 1. show the toast 
-            // 2. navigate to the home
             showToast({message:"Sign in Successful",type:"SUCCESS"});
+            await queryClient.invalidateQueries("validateToken");
             navigate("/");
             
 
@@ -73,8 +74,13 @@ const SignIn = () => {
                         <span className="text-red-500">{errors.password.message}</span>
                     )}
             </label>
-            <span>
-                <button type="submit" className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl " >Login</button>
+            <span className="flex item-center justify-between ">
+                <span className="text-sm">
+                    Not Registered? <Link className="underline" to="/register">Create an account here</Link>
+                </span>
+                <button 
+                    type="submit" 
+                    className="bg-blue-600 text-white p-2 font-bold hover:bg-blue-500 text-xl " >Login</button>
             </span>
         </form>
     );
