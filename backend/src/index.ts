@@ -4,6 +4,7 @@
 // default import/export from the ES6 module only the main function
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 
 // import and autmatically loads env variable from .env to process.env - ES6 syntax
 //dotenv.config();
@@ -42,6 +43,8 @@ app.use(cors({
     origin:process.env.FRONTEND_URL,
     credentials:true,
 }));
+
+app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 //app.get(path, handler function)
 // async function allow to use await

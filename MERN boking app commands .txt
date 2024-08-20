@@ -40,3 +40,9 @@ PS C:\Users\HP\Desktop\BOOKING-APP\backend> npm i cross-env
 
 
 PS C:\Users\HP\Desktop\BOOKING-APP\e2e-tests> npm init playwright@latest
+
+
+PS C:\Users\HP\Desktop\BOOKING-APP\backend> npx tsc --init 
+
+
+PS C:\Users\HP\Desktop\BOOKING-APP\backend> npm run build 
