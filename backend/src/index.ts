@@ -25,6 +25,7 @@ import cookieParser from "cookie-parser";
 // the value could be undefined as well but not necessary 
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
+
 // creates an instance of express app
 // to define endpoints / middleware / start the server
 const app = express();
