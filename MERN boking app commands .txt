@@ -33,3 +33,10 @@ backend -
 	npm i @types/bcryptjs @types/jsonwebtoken
 
 PS C:\Users\HP\Desktop\BOOKING-APP\backend> npm i cookie-parser
+
+
+
+PS C:\Users\HP\Desktop\BOOKING-APP\backend> npm i cross-env
+
+
+PS C:\Users\HP\Desktop\BOOKING-APP\e2e-tests> npm init playwright@latest
