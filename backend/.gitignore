@@ -25,6 +25,7 @@ backend/build/
 
 # Environment variables
 .env
+.env.e2e
 backend/.env
 frontend/.env
 
@@ -34,3 +35,4 @@ node_modules/
 # Ignore the build outputs
 dist/
 build/
+
