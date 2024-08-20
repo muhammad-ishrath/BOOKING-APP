@@ -27,6 +27,7 @@ backend/build/
 .env
 .env.e2e
 backend/.env
+backend/.env.e2e
 frontend/.env
 
 # Ignore the entire node_modules folder
