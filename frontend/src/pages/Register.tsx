@@ -12,6 +12,8 @@ export type RegisterFormData = {
     confirmPassword: string;
 }
 
+
+
 const Register = () => {
     const queryClient = useQueryClient();
     const navigate = useNavigate();
@@ -28,7 +30,6 @@ const Register = () => {
             navigate("/");
         },
         onError: (error:Error) => {
-            // console.log(error.message);
             showToast({message: error.message, type: "ERROR"})
         },
     })
